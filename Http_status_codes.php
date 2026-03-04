@@ -152,21 +152,18 @@ class Http_status_codes extends Trongate {
         400 => [
             'code'        => 400,
             'phrase'      => 'Bad Request',
-            'short'       => 'Bad Request',
             'description' => 'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).',
             'category'    => 'Client Error'
         ],
         401 => [
             'code'        => 401,
             'phrase'      => 'Unauthorized',
-            'short'       => 'Unauthorized',
             'description' => 'Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". That is, the client must authenticate itself to get the requested response.',
             'category'    => 'Client Error'
         ],
         402 => [
             'code'        => 402,
             'phrase'      => 'Payment Required',
-            'short'       => 'Payment Required',
             'description' => 'The initial purpose of this code was for digital payment systems, however this status code is rarely used and no standard convention exists.',
             'category'    => 'Client Error',
             'note'        => 'Rarely used'
@@ -174,112 +171,96 @@ class Http_status_codes extends Trongate {
         403 => [
             'code'        => 403,
             'phrase'      => 'Forbidden',
-            'short'       => 'Forbidden',
             'description' => 'The client does not have access rights to the content; that is, it is unauthorized, so the server is refusing to give the requested resource. Unlike 401 Unauthorized, the client\'s identity is known to the server.',
             'category'    => 'Client Error'
         ],
         404 => [
             'code'        => 404,
             'phrase'      => 'Not Found',
-            'short'       => 'Not Found',
             'description' => 'The server cannot find the requested resource. In the browser, this means the URL is not recognized. In an API, this can also mean that the endpoint is valid but the resource itself does not exist. Servers may also send this response instead of 403 Forbidden to hide the existence of a resource from an unauthorized client. This response code is probably the most well known due to its frequent occurrence on the web.',
             'category'    => 'Client Error'
         ],
         405 => [
             'code'        => 405,
             'phrase'      => 'Method Not Allowed',
-            'short'       => 'Method Not Allowed',
             'description' => 'The request method is known by the server but is not supported by the target resource. For example, an API may not allow DELETE on a resource, or the TRACE method entirely.',
             'category'    => 'Client Error'
         ],
         406 => [
             'code'        => 406,
             'phrase'      => 'Not Acceptable',
-            'short'       => 'Not Acceptable',
             'description' => 'This response is sent when the web server, after performing server-driven content negotiation, doesn\'t find any content that conforms to the criteria given by the user agent.',
             'category'    => 'Client Error'
         ],
         407 => [
             'code'        => 407,
             'phrase'      => 'Proxy Authentication Required',
-            'short'       => 'Proxy Authentication Required',
             'description' => 'This is similar to 401 Unauthorized but authentication is needed to be done by a proxy.',
             'category'    => 'Client Error'
         ],
         408 => [
             'code'        => 408,
             'phrase'      => 'Request Timeout',
-            'short'       => 'Request Timeout',
             'description' => 'This response is sent on an idle connection by some servers, even without any previous request by the client. It means that the server would like to shut down this unused connection. This response is used much more since some browsers use HTTP pre-connection mechanisms to speed up browsing.',
             'category'    => 'Client Error'
         ],
         409 => [
             'code'        => 409,
             'phrase'      => 'Conflict',
-            'short'       => 'Conflict',
             'description' => 'This response is sent when a request conflicts with the current state of the server. In WebDAV remote web authoring, 409 responses are errors sent to the client so that a user might be able to resolve a conflict and resubmit the request.',
             'category'    => 'Client Error'
         ],
         410 => [
             'code'        => 410,
             'phrase'      => 'Gone',
-            'short'       => 'Gone',
             'description' => 'This response is sent when the requested content has been permanently deleted from server, with no forwarding address. Clients are expected to remove their caches and links to the resource. The HTTP specification intends this status code to be used for "limited-time, promotional services". APIs should not feel compelled to indicate resources that have been deleted with this status code.',
             'category'    => 'Client Error'
         ],
         411 => [
             'code'        => 411,
             'phrase'      => 'Length Required',
-            'short'       => 'Length Required',
             'description' => 'Server rejected the request because the Content-Length header field is not defined and the server requires it.',
             'category'    => 'Client Error'
         ],
         412 => [
             'code'        => 412,
             'phrase'      => 'Precondition Failed',
-            'short'       => 'Precondition Failed',
             'description' => 'In conditional requests, the client has indicated preconditions in its headers which the server does not meet.',
             'category'    => 'Client Error'
         ],
         413 => [
             'code'        => 413,
             'phrase'      => 'Content Too Large',
-            'short'       => 'Payload Too Large',
             'description' => 'The request body is larger than limits defined by server. The server might close the connection or return a Retry-After header field.',
             'category'    => 'Client Error'
         ],
         414 => [
             'code'        => 414,
             'phrase'      => 'URI Too Long',
-            'short'       => 'URI Too Long',
             'description' => 'The URI requested by the client is longer than the server is willing to interpret.',
             'category'    => 'Client Error'
         ],
         415 => [
             'code'        => 415,
             'phrase'      => 'Unsupported Media Type',
-            'short'       => 'Unsupported Media Type',
             'description' => 'The media format of the requested data is not supported by the server, so the server is rejecting the request.',
             'category'    => 'Client Error'
         ],
         416 => [
             'code'        => 416,
             'phrase'      => 'Range Not Satisfiable',
-            'short'       => 'Range Not Satisfiable',
             'description' => 'The ranges specified by the Range header field in the request cannot be fulfilled. It\'s possible that the range is outside the size of the target resource\'s data.',
             'category'    => 'Client Error'
         ],
         417 => [
             'code'        => 417,
             'phrase'      => 'Expectation Failed',
-            'short'       => 'Expectation Failed',
             'description' => 'This response code means the expectation indicated by the Expect request header field cannot be met by the server.',
             'category'    => 'Client Error'
         ],
         418 => [
             'code'        => 418,
             'phrase'      => 'I\'m a teapot',
-            'short'       => 'I\'m a teapot',
             'description' => 'The server refuses the attempt to brew coffee with a teapot.',
             'category'    => 'Client Error',
             'note'        => 'April Fools\' joke (RFC 2324)'
@@ -287,35 +268,30 @@ class Http_status_codes extends Trongate {
         421 => [
             'code'        => 421,
             'phrase'      => 'Misdirected Request',
-            'short'       => 'Misdirected Request',
             'description' => 'The request was directed at a server that is not able to produce a response. This can be sent by a server that is not configured to produce responses for the combination of scheme and authority that are included in the request URI.',
             'category'    => 'Client Error'
         ],
         422 => [
             'code'        => 422,
             'phrase'      => 'Unprocessable Content',
-            'short'       => 'Unprocessable Entity',
             'description' => 'The request was well-formed but was unable to be followed due to semantic errors. (WebDAV)',
             'category'    => 'Client Error'
         ],
         423 => [
             'code'        => 423,
             'phrase'      => 'Locked',
-            'short'       => 'Locked',
             'description' => 'The resource that is being accessed is locked. (WebDAV)',
             'category'    => 'Client Error'
         ],
         424 => [
             'code'        => 424,
             'phrase'      => 'Failed Dependency',
-            'short'       => 'Failed Dependency',
             'description' => 'The request failed due to failure of a previous request. (WebDAV)',
             'category'    => 'Client Error'
         ],
         425 => [
             'code'        => 425,
             'phrase'      => 'Too Early',
-            'short'       => 'Too Early',
             'description' => 'Indicates that the server is unwilling to risk processing a request that might be replayed.',
             'category'    => 'Client Error',
             'note'        => 'Experimental'
@@ -323,35 +299,30 @@ class Http_status_codes extends Trongate {
         426 => [
             'code'        => 426,
             'phrase'      => 'Upgrade Required',
-            'short'       => 'Upgrade Required',
             'description' => 'The server refuses to perform the request using the current protocol but might be willing to do so after the client upgrades to a different protocol. The server sends an Upgrade header in a 426 response to indicate the required protocol(s).',
             'category'    => 'Client Error'
         ],
         428 => [
             'code'        => 428,
             'phrase'      => 'Precondition Required',
-            'short'       => 'Precondition Required',
             'description' => 'The origin server requires the request to be conditional. This response is intended to prevent the \'lost update\' problem.',
             'category'    => 'Client Error'
         ],
         429 => [
             'code'        => 429,
             'phrase'      => 'Too Many Requests',
-            'short'       => 'Too Many Requests',
             'description' => 'The user has sent too many requests in a given amount of time (rate limiting).',
             'category'    => 'Client Error'
         ],
         431 => [
             'code'        => 431,
             'phrase'      => 'Request Header Fields Too Large',
-            'short'       => 'Request Header Fields Too Large',
             'description' => 'The server is unwilling to process the request because its header fields are too large. The request may be resubmitted after reducing the size of the request header fields.',
             'category'    => 'Client Error'
         ],
         451 => [
             'code'        => 451,
             'phrase'      => 'Unavailable For Legal Reasons',
-            'short'       => 'Unavailable For Legal Reasons',
             'description' => 'The user agent requested a resource that cannot legally be provided, such as a web page censored by a government.',
             'category'    => 'Client Error'
         ],
@@ -360,77 +331,66 @@ class Http_status_codes extends Trongate {
         500 => [
             'code'        => 500,
             'phrase'      => 'Internal Server Error',
-            'short'       => 'Internal Server Error',
             'description' => 'The server has encountered a situation it does not know how to handle. This error is generic, indicating that the server cannot find a more appropriate 5XX status code to respond with.',
             'category'    => 'Server Error'
         ],
         501 => [
             'code'        => 501,
             'phrase'      => 'Not Implemented',
-            'short'       => 'Not Implemented',
             'description' => 'The request method is not supported by the server and cannot be handled. The only methods that servers are required to support (and therefore must not return this code) are GET and HEAD.',
             'category'    => 'Server Error'
         ],
         502 => [
             'code'        => 502,
             'phrase'      => 'Bad Gateway',
-            'short'       => 'Bad Gateway',
             'description' => 'This error response means that the server, while working as a gateway to get a response needed to handle the request, got an invalid response.',
             'category'    => 'Server Error'
         ],
         503 => [
             'code'        => 503,
             'phrase'      => 'Service Unavailable',
-            'short'       => 'Service Unavailable',
             'description' => 'The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded. Should be used for temporary conditions; Retry-After header is recommended.',
             'category'    => 'Server Error'
         ],
         504 => [
             'code'        => 504,
             'phrase'      => 'Gateway Timeout',
-            'short'       => 'Gateway Timeout',
             'description' => 'This error response is given when the server is acting as a gateway and cannot get a response in time.',
             'category'    => 'Server Error'
         ],
         505 => [
             'code'        => 505,
             'phrase'      => 'HTTP Version Not Supported',
-            'short'       => 'HTTP Version Not Supported',
             'description' => 'The HTTP version used in the request is not supported by the server.',
             'category'    => 'Server Error'
         ],
         506 => [
             'code'        => 506,
             'phrase'      => 'Variant Also Negotiates',
-            'short'       => 'Variant Also Negotiates',
             'description' => 'The server has an internal configuration error: during content negotiation, the chosen variant is configured to engage in content negotiation itself, which results in circular references when creating responses.',
             'category'    => 'Server Error'
         ],
         507 => [
             'code'        => 507,
             'phrase'      => 'Insufficient Storage',
-            'short'       => 'Insufficient Storage',
             'description' => 'The method could not be performed on the resource because the server is unable to store the representation needed to successfully complete the request. (WebDAV)',
             'category'    => 'Server Error'
         ],
         508 => [
             'code'        => 508,
             'phrase'      => 'Loop Detected',
-            'short'       => 'Loop Detected',
             'description' => 'The server detected an infinite loop while processing the request. (WebDAV)',
             'category'    => 'Server Error'
         ],
         510 => [
             'code'        => 510,
             'phrase'      => 'Not Extended',
-            'short'       => 'Not Extended',
             'description' => 'The client request declares an HTTP Extension (RFC 2774) that should be used to process the request, but the extension is not supported.',
             'category'    => 'Server Error'
         ],
         511 => [
             'code'        => 511,
             'phrase'      => 'Network Authentication Required',
-            'short'       => 'Network Authentication Required',
             'description' => 'Indicates that the client needs to authenticate to gain network access.',
             'category'    => 'Server Error'
         ]
@@ -444,6 +404,61 @@ class Http_status_codes extends Trongate {
      */
     public function get_status_info(int $code): ?array {
         return $this->http_status_codes[$code] ?? null;
+    }
+
+    /**
+     * Get status codes filtered by category
+     *
+     * @param string|null $category_title The category to filter by (optional)
+     * @return array Filtered status codes or all if category is empty/invalid
+     */
+    public function get_status_codes(?string $category_title = null): array {
+        if (empty($category_title)) {
+            return $this->http_status_codes;
+        }
+        
+        $filtered = [];
+        foreach ($this->http_status_codes as $code => $info) {
+            if ($info['category'] === $category_title) {
+                $filtered[$code] = $info;
+            }
+        }
+        
+        return empty($filtered) ? $this->http_status_codes : $filtered;
+    }
+
+    /**
+     * Get all category titles with their code ranges
+     *
+     * @return array Array of category titles with start and end numbers (e.g., "Informational (100 - 103)")
+     */
+    public function get_categories(): array {
+        $categories = [];
+        
+        foreach ($this->http_status_codes as $code => $info) {
+            $category = $info['category'];
+            
+            if (!isset($categories[$category])) {
+                $categories[$category] = [
+                    'min' => $code,
+                    'max' => $code
+                ];
+            } else {
+                if ($code < $categories[$category]['min']) {
+                    $categories[$category]['min'] = $code;
+                }
+                if ($code > $categories[$category]['max']) {
+                    $categories[$category]['max'] = $code;
+                }
+            }
+        }
+        
+        $result = [];
+        foreach ($categories as $category => $range) {
+            $result[] = $category . ' (' . $range['min'] . ' - ' . $range['max'] . ')';
+        }
+        
+        return $result;
     }
 
 }
